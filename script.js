@@ -32,16 +32,15 @@ startButton.addEventListener("click", () => {
     const alarmElement = document.createElement("div");
     alarmElement.classList.add("alarm-item");
     alarmElement.innerHTML = `
-    <div class="alarms">
       <span class="alarm-time"> ${formattedTime}</span>
         <span class="toggle"></span><i class="fa-solid fa-trash"></i>
         <span class="countdown" id="countdown-${id}"></span>
-    </div>
     `;
 
     alarmContainerDiv.appendChild(alarmElement);
 
     const toggleBtn = alarmElement.querySelector(".toggle");
+
     toggleBtn.addEventListener("click", () => {
       toggleBtn.classList.toggle("active");
       const alarm = alarms.alarm.find((a) => a.id === id);
@@ -63,11 +62,9 @@ startButton.addEventListener("click", () => {
       if (alarmIndex !== -1) {
         alarms.alarm.splice(alarmIndex, 1);
         stopAudio(alarm.id);
+        alarmElement.remove();
+        console.log(alarms.alarm);
       }
-
-      alarmElement.remove();
-
-      console.log(alarms.alarm);
     });
 
     startCountdown(alarms.alarm[alarms.alarm.length - 1]);

@@ -58,35 +58,25 @@ body {
   background-color: #1f2734;
 }
 .alarm-div {
-  background-color: aliceblue;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-content: center;
-  padding: 15px 22px;
-  gap: 20px;
-  max-height: 280px;
+  background-color: #c5cbd2;
+  margin: 10px 20px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  max-height: 220px;
+  min-width: 310px;
   overflow-y: scroll;
 }
-
-.alarm-div span {
-  margin: 0 10px;
-}
-.alarm-div .alarms {
-  width: 100%;
-  padding: 10px;
-  margin: 0;
-  align-self: center;
+.alarm-div .alarm-item {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  margin: 10px 0;
+  position: relative;
 }
-.alarm-div .alarms::after {
-  content: "";
-  height: 3px;
-  width: 100%;
-  background-color: #141e30;
-  display: block;
-  margin-top: 5px;
-}
+
 .fa-solid {
   font-size: 18px;
 }
@@ -110,7 +100,6 @@ body {
   border: 2px solid #1f2734;
   display: inline-block;
 }
-
 .toggle::before {
   content: "";
   width: 100%;
@@ -137,7 +126,6 @@ body {
   background-color: #4caf50;
   border: 2px solid #4caf50;
 }
-
 .toggle.active::after {
   left: 20px;
 }
