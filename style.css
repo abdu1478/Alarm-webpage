@@ -4,14 +4,26 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --dark-colr: #1f2734;
+  --light-dark: #141e30;
+  --font: 18px 'Arima', sans-serif;
+}
+.alarm-div::-webkit-scrollbar {
+  width: 15px;
+}
+.alarm-div::-webkit-scrollbar-thumb {
+  background-color: var(--dark-colr);
+  border-radius: 5px;
+}
 
 body {
-  background: linear-gradient(90deg, #141e30, #2c4b6e);
+  background: linear-gradient(90deg, var(--light-dark), #2c4b6e);
   color: white;
   display: flex;
   justify-items: center;
   align-content: center;
-  font: 14px 'Open Sans', sans-serif;
+  font: var(--font);
   height: 100svh;
   overflow: hidden;
 }
@@ -21,8 +33,8 @@ body {
   align-self: center;
   margin: auto 20px;
   width: 100%;
-  background-color: antiquewhite;
-  color: #141e30;
+  background-color: #e6e8ef;
+  color: var(--light-dark);
   border-radius: 5px;
   padding: 10px;
   box-shadow: 0 1px 0 rgba(228, 228, 228, 0.1);
@@ -39,34 +51,39 @@ body {
   width: 100%;
   padding: 5px;
   border-radius: 5px;
-  border: 1px solid #141e30;
-  font-size: 16px;
+  border: 1px solid var(--light-dark);
+  font: var(--font);
   cursor: pointer;
 }
+.time-div input:focus {
+  border: 1px solid var(--dark-colr);
+  outline: none;
+}
+
 .time-div button {
   width: 100%;
   padding: 5px;
   border-radius: 5px;
-  border: 1px solid #141e30;
-  font-size: 16px;
-  background-color: #141e30;
+  border: 1px solid var(--light-dark);
+  font: 16px 'Arima', sans-serif;
+  background-color: var(--light-dark);
   color: white;
   cursor: pointer;
 }
 .time-div button:hover {
-  background-color: #1f2734;
+  background-color: var(--dark-colr);
 }
 #time-input {
   font: 16px 'Open Sans', sans-serif;
-  border: 1px solid #141e30;
-  outline: #141e30;
+  border: 1px solid var(--light-dark);
+  outline: var(--light-dark);
 }
 
 .hidden {
   display: none;
 }
 .alarm-div {
-  background-color: #c5cbd2;
+  background-color: #a9b0c6;
   margin: 10px 20px;
   padding: 10px 10px;
   border-radius: 5px;
@@ -94,7 +111,7 @@ body {
 
 .alarm-time {
   position: relative;
-  font-size: 18px;
+  font: var(--font);
   font-weight: 600;
 }
 
@@ -102,10 +119,10 @@ body {
   width: 40px;
   height: 20px;
   border-radius: 20px;
-  background-color: #1f2734;
+  background-color: var(--dark-colr);
   position: relative;
   cursor: pointer;
-  border: 2px solid #1f2734;
+  border: 2px solid var(--dark-colr);
   display: inline-block;
 }
 .toggle::before {
@@ -136,4 +153,10 @@ body {
 }
 .toggle.active::after {
   left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .continer-div {
+    display: grid;
+  }
 }
